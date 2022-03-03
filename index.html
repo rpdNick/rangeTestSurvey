@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" href="./style/range-style.css?ver=1.1.7">
+    <link rel="stylesheet" href="./style/style.css?ver=1.4.8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="survey-container" id="survey-container">
+        <div class="header">
+            <div class="logo">
+               <span>Logo</span>
+            </div>
+            <div class="header-txt">
+                <!-- <p><span class="upper">Название <span class="no-wrapp">про<span class="txt-line">дукта</span></span></span></p> -->
+                <p>"Текст"</p>
+            </div>
+        </div>
+        <form action="thanks_page.html" id="main-form">
+            <div class="q-box-0">
+                <div class="q-markering-container">
+                    <div class="q-number-box">
+                        <div class="q-number">
+                            <span class="big-number">1/</span><span class="small-number">5</span>
+                        </div>
+                        <div class="marker-container">
+                            <div class="marker active"></div>
+                            <div class="marker"></div>
+                            <div class="marker"></div>
+                            <div class="marker"></div>
+                            <div class="marker"></div>
+                            <div class="marker" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="white-bg">
+                    <div class="main-question-wrapper">
+                        <p class="main-question">Насколько Вы довольны продуктом "название"
+                            в целом?</p>
+                    </div>
+                    <div class="range-container">
+                        <img class="range-curve" src="./img/svg_url2.svg" alt="">
+                        <div class="range-wrap" id="range-wrapp-1">
+                            <div class="points-box" id="points-box"></div>
+                            <div class="point-marcking-wrapper">
+                                <div class="point-marck active-mark">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                                <div class="point-marck">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                                <div class="point-marck">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                                <div class="point-marck">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                                <div class="point-marck">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                                <div class="point-marck">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                                <div class="point-marck">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                                <div class="point-marck">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                                <div class="point-marck">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                                <div class="point-marck">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                                <div class="point-marck">
+                                    <img src="./img/marckingEllipse.svg" alt="">
+                                </div>
+                            </div>
+                            <!-- Ticks (lines) over slider -->
+                            <div class="ticks" id="tickContainer">
+                            </div>
+                            <!-- Range value inside of range thumb -->
+                            <div class="range-value" id="rangeValue">
+                                <div class="dots">
+                                    <img src="./img/dots.svg" alt="">
+                                </div>
+                            </div>
+                            <!-- Range itself -->
+                            <input id="range" class="input-el" type="range" min="0" max="10" value="0.1" step="0.1">
+                        </div>
+                        <p class="range-error">Выберите, пожалуйста, причину предыдущей оценки</p>
+                        <div class="help-message-wrapper">
+                            <div class="help-txt hidden-help" style="display: none;">
+                                <div class="help-icon first-range-help">
+                                    <i class="hand first-range-hand"></i>
+                                    <div class="arrow-left">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 17 30" style="enable-background:new 0 0 17 30;"
+                                            xml:space="preserve">
+                                            <style type="text/css">
+                                                .l-arrow {
+                                                    fill: none;
+                                                    stroke: #B0AFAD;
+                                                    stroke-width: 1.5;
+                                                    stroke-linejoin: bevel;
+                                                    stroke-miterlimit: 10;
+                                                }
+                                            </style>
+                                            <polyline class="l-arrow" points="16.1,28.9 1.5,15 16.2,1.4 " />
+                                        </svg>
+                                    </div>
+                                    <div class="arrow-right">
+                                        <div class="arrow-line"></div>
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 17 31" style="enable-background:new 0 0 17 31;"
+                                            xml:space="preserve">
+                                            <style type="text/css">
+                                                .r-arrow {
+                                                    fill: none;
+                                                    stroke: #B0AFAD;
+                                                    stroke-width: 1.5;
+                                                    stroke-linejoin: bevel;
+                                                    stroke-miterlimit: 10;
+                                                }
+                                            </style>
+                                            <polyline class="r-arrow" points="1.7,28.9 16.2,15 1.5,1.4 " />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="first-range-help-txt" style="display: none;">нажмите или проведите по шкале
+                                    вправо
+                                    или
+                                    влево</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="survey-subquestions-container">
+                <div class="q-box q-box-1">
+                    <div class="q-markering-container">
+                        <div class="q-number-box">
+                            <div class="q-number">
+                                <span class="big-number">2/</span><span class="small-number">5</span>
+                            </div>
+                            <div class="marker-container">
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker"></div>
+                                <div class="marker"></div>
+                                <div class="marker"></div>
+                                <!-- <div class="marker"></div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="white-bg">
+                        <div class="main-question-wrapper">
+                            <p class="main-question">Насколько легко пользоваться продуктом "название"?
+                            </p>
+                        </div>
+                        <div class="range-container">
+                            <div class="range-wrap" id="range-wrapp-2">
+                                <div class="points-box" id="points-box2"></div>
+                                <div class="point-marcking-wrapper">
+                                    <div class="point-marck active-mark">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Ticks (lines) over slider -->
+                                <div class="ticks" id="tickContainer2">
+                                </div>
+                                <!-- Range value inside of range thumb -->
+                                <div class="range-value" id="rangeValue2">
+                                    <div class="dots">
+                                        <img src="./img/dots.svg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Range itself -->
+                                <input id="range2" class="input-el" type="range" min="0" max="10" value="0.1"
+                                    step="0.1">
+                            </div>
+                            <p class="range-error">Пожалуйста, выберите ответ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="q-box q-box-2">
+                    <div class="q-markering-container">
+                        <div class="q-number-box">
+                            <div class="q-number">
+                                <span class="big-number">3/</span><span class="small-number">5</span>
+                            </div>
+                            <div class="marker-container">
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker"></div>
+                                <div class="marker"></div>
+                                <!-- <div class="marker"></div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="white-bg">
+                        <div class="main-question-wrapper">
+                            <p class="main-question">Оцените понятность тарифов и условий обслуживания</p>
+                        </div>
+                        <div class="range-container">
+                            <div class="range-wrap" id="range-wrapp-3">
+                                <div class="points-box" id="points-box3"></div>
+                                <div class="point-marcking-wrapper">
+                                    <div class="point-marck active-mark">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Ticks (lines) over slider -->
+                                <div class="ticks" id="tickContainer3">
+                                </div>
+                                <!-- Range value inside of range thumb -->
+                                <div class="range-value" id="rangeValue3">
+                                    <div class="dots">
+                                        <img src="./img/dots.svg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Range itself -->
+                                <input id="range3" class="input-el" type="range" min="0" max="10" value="0.1"
+                                    step="0.1">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="range-error">Пожалуйста, выберите ответ</p>
+                    <div class="additional-answers-wrapper additional-answers3">
+                        <p class="additional-answers-text"></p>
+                        <div class="additional-answers-box r3-answers">
+                            <div class="additional-answer-el">
+                                <input type="checkbox" class="q-input q-3-input" value="" data-name="q-2-1"
+                                    name="f_sub[]" id="q-2-1" data-reqired="">
+                                <label for="q-2-1">
+                                    <div class="answer-el">
+                                        <div class="icon-box">
+
+                                        </div>
+                                        <div class="answer-txt">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="additional-answer-el">
+                                <input type="checkbox" class="q-input q-3-input" value="" data-name="q-2-1"
+                                    name="f_sub[]" id="q-2-2" data-reqired="">
+                                <label for="q-2-2">
+                                    <div class="answer-el">
+                                        <div class="icon-box">
+
+                                        </div>
+                                        <div class="answer-txt">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="additional-answer-el">
+                                <input type="checkbox" class="q-input q-3-input" value="" data-name="q-2-1"
+                                    name="f_sub[]" id="q-2-3" data-reqired="">
+                                <label for="q-2-3">
+                                    <div class="answer-el">
+                                        <div class="icon-box">
+
+                                        </div>
+                                        <div class="answer-txt">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <p class="error">Выберите, пожалуйста, причину предыдущей оценки </p>
+                    </div>
+                </div>
+                <div class="q-box q-box-3">
+                    <div class="q-markering-container">
+                        <div class="q-number-box">
+                            <div class="q-number">
+                                <span class="big-number">4/</span><span class="small-number">5</span>
+                            </div>
+                            <div class="marker-container">
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker"></div>
+                                <!-- <div class="marker"></div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="white-bg">
+                        <div class="main-question-wrapper">
+                            <p class="main-question">Оцените достаточность и понятность информации(функционала) в
+                                мобильном банке</p>
+                        </div>
+                        <div class="range-container">
+                            <div class="range-wrap" id="range-wrapp-4">
+                                <div class="points-box" id="points-box4"></div>
+                                <div class="point-marcking-wrapper">
+                                    <div class="point-marck active-mark">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                    <div class="point-marck">
+                                        <img src="./img/marckingEllipse.svg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Ticks (lines) over slider -->
+                                <div class="ticks" id="tickContainer4">
+                                </div>
+                                <!-- Range value inside of range thumb -->
+                                <div class="range-value" id="rangeValue4">
+                                    <div class="dots">
+                                        <img src="./img/dots.svg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Range itself -->
+                                <input id="range4" class="input-el" type="range" min="0" max="10" value="0.1"
+                                    step="0.1">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="range-error">Пожалуйста, выберите ответ</p>
+                    <div class="additional-answers-wrapper additional-answers4">
+                        <p class="additional-answers-text"></p>
+                        <div class="additional-answers-box r4-answers">
+                            <div class="additional-answer-el">
+                                <input type="checkbox" class="q-input q-4-input" value="" data-name="q-3-1"
+                                    name="f_sub[]" id="q-3-1" data-reqired="">
+                                <label for="q-3-1">
+                                    <div class="answer-el">
+                                        <div class="icon-box">
+
+                                        </div>
+                                        <div class="answer-txt">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="additional-answer-el">
+                                <input type="checkbox" class="q-input q-4-input" value="" data-name="q-3-1"
+                                    name="f_sub[]" id="q-3-2" data-reqired="">
+                                <label for="q-3-2">
+                                    <div class="answer-el">
+                                        <div class="icon-box">
+
+                                        </div>
+                                        <div class="answer-txt">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="additional-answer-el">
+                                <input type="checkbox" class="q-input q-4-input" value="" data-name="q-3-1"
+                                    name="f_sub[]" id="q-3-3" data-reqired="">
+                                <label for="q-3-3">
+                                    <div class="answer-el">
+                                        <div class="icon-box">
+
+                                        </div>
+                                        <div class="answer-txt">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="additional-answer-el">
+                                <input type="checkbox" class="q-input q-4-input" value="" data-name="q-3-1"
+                                    name="f_sub[]" id="q-3-4" data-reqired="">
+                                <label for="q-3-4">
+                                    <div class="answer-el">
+                                        <div class="icon-box">
+
+                                        </div>
+                                        <div class="answer-txt">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="additional-answer-el">
+                                <input type="checkbox" class="q-input q-4-input" value="" data-name="q-3-1"
+                                    name="f_sub[]" id="q-3-5" data-reqired="">
+                                <label for="q-3-5">
+                                    <div class="answer-el">
+                                        <div class="icon-box">
+
+                                        </div>
+                                        <div class="answer-txt">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="additional-answer-el">
+                                <input type="checkbox" class="q-input q-4-input" value="" data-name="q-3-1"
+                                    name="f_sub[]" id="q-3-6" data-reqired="">
+                                <label for="q-3-6">
+                                    <div class="answer-el">
+                                        <div class="icon-box">
+
+                                        </div>
+                                        <div class="answer-txt">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <p class="error">Выберите, пожалуйста, причину предыдущей оценки </p>
+                    </div>
+                </div>
+                <div class="q-box q-box-4">
+                    <div class="q-markering-container">
+                        <div class="q-number-box">
+                            <div class="q-number">
+                                <span class="big-number">5/</span><span class="small-number">5</span>
+                            </div>
+                            <div class="marker-container">
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <!-- <div class="marker active"></div> -->
+                            </div>
+                            <div class="last-q last-q-5">
+                                <img src="./img/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-question-wrapper">
+                        <p class="main-question"><span class="red">Оставьте Ваш комментарий.</span> <br>
+                            Ваше мнение очень важно для нас!</p>
+                        <div class="comment-wrapper">
+                            <i class="comment-icon"></i>
+                            <textarea class="comment required-comment" name="step_o_desc"
+                                placeholder="Оставить комментарий" style="padding-left: 20px;"></textarea>
+                            <div class="char-counter-box">Ограничение количества символов в комментарии: <span
+                                    class="no-wrap"><span id="charCount">0</span> из 1000</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="q-box q-box-5">
+                    <div class="q-markering-container">
+                        <div class="q-number-box">
+                            <div class="q-number">
+                                <span class="big-number">6/</span><span class="small-number">6</span>
+                            </div>
+                            <div class="marker-container">
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                                <div class="marker active"></div>
+                            </div>
+                            <div class="last-q last-q-6">
+                                <img src="./img/check.svg" alt="">
+                            </div>
+                        </div>
+                        <p class="call-txt">Можем ли мы связаться с Вами по номеру телефона для более подробного
+                            обсуждения Ваших ответов?</p>
+                        <div class="flex-box">
+                            <div class="answer-wrapper">
+                                <input type="radio" class="answer" value="Да" name="d-1" id="d-1">
+                                <label class="answer-label answer-yes" for="d-1">
+                                    <img src="./img/ellipse-big.svg" class="ellipse ellipse-big" alt="">
+                                    <img src="./img/ellipse-small-red.svg" class="ellipse ellipse-smll" alt="">
+                                    <div class="digit">
+                                        <span>Да</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="answer-wrapper">
+                                <input type="radio" class="answer" value="Нет" name="d-1" id="d-2">
+                                <label class="answer-label answer-no" for="d-2">
+                                    <img src="./img/ellipse-big.svg" class="ellipse ellipse-big" alt="">
+                                    <img src="./img/ellipse-small-red.svg" class="ellipse ellipse-smll" alt="">
+                                    <div class="digit">
+                                        <span>Нет</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="btn-wrapper">
+                    <div class="button-overlay">
+                        <button class="submit-btn" type="submit">
+                            <span>Отправить</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./script/range.js?ver=1.4.7"></script>
+    <script>
+        history.pushState(null, null, location.href);
+        history.back();
+        history.forward();
+        window.onpopstate = function () {
+            history.go(1);
+        };
+
+        let activity = 0;
+
+        $('#range').on('click', () => {
+            activity = 1;
+            $('.hidden-help').hide();
+        })
+        $('#range').on('mousedown', () => {
+            activity = 1;
+            $('.hidden-help').hide();
+        })
+        $('#range').on('touchstart', () => {
+            activity = 1;
+            $('.hidden-help').hide();
+        })
+
+        /* Hint position*/
+        function hintPosition() {
+            let offset = $('#range').offset();
+            let hintPosition = offset.left + 35;
+            $('.help-message-wrapper').css('left', hintPosition);
+            $('.help-txt span').css('font-size', '9px');
+        }
+
+        if ($(window).width() <= 502 && $(window).width() > 350) {
+            hintPosition();
+            console.log('1')
+        }
+        if ($(window).width() < 350) {
+            hintPosition();
+            $('.help-txt span').css('font-size', '8px');
+            console.log('2')
+        }
+        if ($(window).width() > 502) {
+            $('.help-message-wrapper').css('left', '41px');
+        }
+
+        $(window).resize(function () {
+            if ($(window).width() <= 502) {
+                hintPosition();
+            } else {
+                $('.help-message-wrapper').css('left', '41px');
+            }
+        });
+
+        function showHintNoActivity() {
+            if (activity == 0) {
+                $('.hidden-help').fadeIn();
+                $('.first-range-help-txt').fadeIn();
+                $('.first-range-help .arrow-right').addClass('active-arrow');
+                $('.first-range-help .arrow-line').css('width', '24px');
+                $('.first-range-help').css('background', '#e60028');
+                $('.first-range-help .hand').addClass('hand-active');
+            } else {
+                return false;
+            }
+        }
+        setTimeout(showHintNoActivity, 2000);
+
+        $('.answer').on('change', function () {
+            if ($(this).is(':checked')) {
+                $('.ellipse').hide();
+                $(this).parents('.answer-wrapper').find('.ellipse').fadeIn(500);
+                $('.worker-wrapper').fadeIn(500);
+                $('#range1').fadeIn(500);
+            }
+        });
+
+        /* Textarea settings */
+
+        $(".comment").on("focus", function () {
+            $(this).attr('placeholder', '');
+            $('.comment-icon').fadeOut();
+            $('.comment').css({
+                'padding-left': '0',
+                'line-height': '17px'
+
+            });
+        });
+
+        $(".comment").on("focusout", function () {
+            if ($(this).val() == '') {
+                $(this).attr('placeholder', 'Оставить комментарий');
+                $('.comment-icon').fadeIn();
+                $('.comment').css({
+                    'padding-left': '20px',
+                    'line-height': '37px'
+                });
+            }
+        });
+
+
+        const characters_Limit = 1000;
+        $('.comment').keyup(function () {
+            if ($(this).val().length > characters_Limit) {
+                $(this).val($(this).val().substr(0, characters_Limit));
+
+            }
+            $('#charCount').text(this.value.replace(/{.*}/g, '').length);
+        });
+
+        /*Show hide 6 question*/
+        // $('.input-el').on('change', function () {
+        //     console.log('lastRangChanged:', lastRangChanged);
+
+        //     if (range1Indecator == 0 || range2Indecator == 0 || range3Indecator == 0 || range4Indecator == 0) {
+        //         $('.small-number').text('6');
+        //         $(".marker-container .marker:last-child").show();
+        //         $('.marker').css('width', '16%');
+        //         $('.q-box-5').show();
+        //         $('.answer').prop("checked", false);
+        //         $('.ellipse').hide();
+        //         $('.q-box-4 .marker:last-child').removeClass('active');
+        //     } else {
+        //         $('.small-number').text('5');
+        //         $(".marker-container .marker:last-child").hide();
+        //         $('.marker').css('width', '19%');
+        //         $('.q-box-5').hide();
+        //         $('.q-box-4 .marker:last-child').addClass('active');
+        //     }
+
+
+        //     if (range1Indecator == 0 && lastRangChanged == 1 || range2Indecator == 0 && lastRangChanged == 1 ||
+        //         range3Indecator == 0 && lastRangChanged == 1 ||
+        //         range4Indecator == 0 && lastRangChanged == 1) {
+        //         $('.q-box-5').show();
+        //         $('.small-number').text('6');
+        //         $('.last-q-5').hide();
+        //     } else {
+        //         $('.q-box-5').hide();
+        //         $('.last-q-5').show();
+        //     }
+
+        // });
+
+        /* Validation */
+        let form = document.getElementById('main-form');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let el = document.querySelectorAll('[data-reqired]');
+            console.log(el);
+            let erroreArrayElemnts = [];
+
+            for (let i = 0; i < el.length; i++) {
+                if (el[i].tagName === 'INPUT') {
+                    let name = el[i].getAttribute('data-name');
+                    console.log(name);
+
+                    if (document.querySelectorAll('[data-name=' + name + ']:checked').length === 0) {
+                        erroreArrayElemnts.push(el[i]);
+                        $(el[i]).on('click', function () {
+                            $(this).parents('.additional-answers-wrapper').find('.error').hide();
+                        });
+                        $(el[i]).parents('.additional-answers-wrapper').find('.error').show();
+                    }
+                }
+            }
+            let scrollEl = erroreArrayElemnts[0];
+            if (erroreArrayElemnts.length > 0) {
+                $('html, body').animate({
+                    scrollTop: $(scrollEl).parents('div').offset().top - 200
+                }, 1000);
+            }
+            if (erroreArrayElemnts.length == 0) {
+                form.submit();
+            }
+        });
+
+
+
+
+        /*Scroll to questions settings are here*/
+
+        let myScroll = true;
+        let timeOut = null;
+        let scrollTimeOut = null;
+        let pageLoadScroll = true;
+        $(function () {
+            if (pageLoadScroll == true) {
+                $('html, body').animate({
+                    scrollTop: $('.header').offset().top
+                }, 700);
+            }
+        });
+
+        let radio4Changing = 0;
+        let radio2Changing = 0;
+
+        // $('.q-2-input').on('change', function () {
+        //     myScroll = true;
+        //     $('.q-box-2').fadeIn();
+        //     if (myScroll == true) {
+        //         function scrollToQ3() {
+        //             let nextPosition = $('.q-box-2').offset().top;
+        //             $('html, body').animate({
+        //                 scrollTop: nextPosition
+        //             }, 500);
+        //         }
+        //         clearTimeout(timeOut);
+        //         timeOut = setTimeout(scrollToQ3, 4000);
+        //     } else {
+        //         return
+        //     }
+        // });
+
+
+        $('.q-3-input').on('change', function () {
+            $('.q-box-3').fadeIn();
+            myScroll = true;
+            if (radio4Changing == 0) {
+                let haightSum = $('.header').innerHeight() + $('.q-box-0').innerHeight() + $('.q-box-1')
+                    .innerHeight() + $('.q-box-2').innerHeight();
+                $('#survey-container').css('min-height', `calc(${haightSum + 20}px + 100vh)`);
+            }
+
+            if (myScroll == true) {
+                function scrollToQ4() {
+
+                    let nextPosition = $('.q-box-3').offset().top;
+                    $('html, body').animate({
+                        scrollTop: nextPosition
+                    }, 500);
+                }
+                clearTimeout(timeOut);
+                timeOut = setTimeout(scrollToQ4, 4000);
+            } else {
+                clearTimeout(timeOut);
+            }
+        });
+
+
+        $('.q-4-input').on('change', function () {
+            $('.q-box-4').fadeIn();
+            radio4Changing = 1;
+            myScroll = true;
+            // let haightSum = $('.header').innerHeight() + $('.q-box-0').innerHeight() + $('.q-box-1').innerHeight() + $('.q-box-2').innerHeight() + $('.q-box-3').innerHeight() + 40;
+            // $('#survey-container').css('min-height', `calc(${haightSum}px + 100vh)`);
+            if (myScroll == true) {
+                function scrollToQ5() {
+
+                    let nextPosition = $('.q-box-4').offset().top;
+                    $('html, body').animate({
+                        scrollTop: nextPosition
+                    }, 500);
+                }
+                clearTimeout(timeOut);
+                timeOut = setTimeout(scrollToQ5, 4000);
+            } else {
+                clearTimeout(timeOut);
+            }
+        });
+
+        window.addEventListener("scroll", (e) => {
+            myScroll = false;
+            clearTimeout(timeOut);
+
+            function returnScrollState() {
+                myScroll = true;
+            }
+            scrollTimeOut = setTimeout(returnScrollState, 1000);
+        });
+    </script>
+</body>
+
+</html>
